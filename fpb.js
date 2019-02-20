@@ -1,6 +1,13 @@
 function fpb(angka1, angka2) {
     var result = 0;
-    for(var i = 0; i < angka1 && i < angka2; i++) {
+    var smaller = 0
+
+    if(angka1 > angka2) {
+        smaller = angka2
+    } else {
+        smaller = angka1
+    }
+    for(var i = 0; i < smaller+1; i++) {
         if(angka1 % i === 0 && angka2 % i ===0) {
             result = i;
         }
@@ -9,7 +16,7 @@ function fpb(angka1, angka2) {
   }
   
   // TEST CASES
-  console.log(fpb(12, 16)); // 4
+  console.log(fpb(8, 16)); // 4
   console.log(fpb(50, 40)); // 10
   console.log(fpb(22, 99)); // 11
   console.log(fpb(24, 36)); // 12
