@@ -1,11 +1,11 @@
 function cariMedian(arr) {
      var med = Math.floor(arr.length/2)
-      console.log(arr[med])
-    // if(arr.length % 2) {
-        // return arr[med];
-    //  } else {
-        //  return (arr[med-1] + arr[med])/2
-    // }
+      
+    if(arr.length % 2) {
+        return arr[med];
+     } else {
+         return (arr[med-1] + arr[med])/2
+    }
 }
   
 
