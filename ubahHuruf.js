@@ -5,8 +5,13 @@ function ubahHuruf(kata) {
     for(var i = 0; i < kata.length; i++) {
         for(var j = 0; j < abjad.length; j++) {
             if(kata[i] === abjad[j]) {
-                result += abjad[j+1]
-            }
+                var abjadDepan = abjad[j+1]
+                if(abjadDepan === undefined) {
+                    result += abjad[0]
+                } else {
+                   result += abjad[j+1]
+                }
+            }   
         }
     }
     return result
@@ -15,7 +20,7 @@ function ubahHuruf(kata) {
       
   
   // TEST CASES
-  console.log(ubahHuruf('wow')); // xpx
+  console.log(ubahHuruf('woz')); // xpx
   console.log(ubahHuruf('developer')); // efwfmpqfs
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
