@@ -2,6 +2,8 @@ function naikAngkot(arrPenumpang) {
   rute = ['A', 'B', 'C', 'D', 'E', 'F'];
   var output = []
   var biaya = 2000
+  var awal = 0
+  var akhir = 0
 
   for(var i = 0; i < arrPenumpang.length; i++) {
       var obj = {
@@ -13,13 +15,13 @@ function naikAngkot(arrPenumpang) {
       for(var j = 0; j < rute.length; j++) {
         //   console.log(j)
         // console.log( "ini indeks =" + j + " ini nilai rutenya" + rute[j] )
-          if(rute[j] === obj.naikDari) {
-              var awal = j   
-          } else if(rute[j] === obj.tujuan) {
-              var akhir = j
+          if(obj.naikDari === rute[j]) {
+               awal = j   
+          } else if(obj.tujuan === rute[j]) {
+               akhir = j
           }
       }
-      obj.bayar = biaya * (akhir - awal)
+      obj.bayar = Math.abs(biaya * (akhir - awal))
       output.push(obj)
   }
   return output
